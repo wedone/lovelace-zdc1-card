@@ -7,7 +7,7 @@
  * @LastEditTime  : 2020-08-26 15:32:40
  */
 
-console.info("%c PHICOMM DC1 CARD \n%c   Version 1.2.0  ",
+console.info("%c PHICOMM zDC1 CARD \n%c   Version 1.2.0-mod  ",
 "color: orange; font-weight: bold; background: black", 
 "color: white; font-weight: bold; background: dimgray");
 
