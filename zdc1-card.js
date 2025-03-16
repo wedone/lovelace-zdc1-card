@@ -17,13 +17,13 @@ const LitElement = Object.getPrototypeOf(
 const html = LitElement.prototype.html;
 const css = LitElement.prototype.css;
   
-class DC1Card extends HTMLElement {
+class zDC1Card extends HTMLElement {
     constructor() {
         super();
         this.attachShadow({ mode: 'open' });
     }
     static getConfigElement() {
-        return document.createElement("dc1-card-editor");
+        return document.createElement("zdc1-card-editor");
       }
 
     static getStubConfig() {
@@ -90,7 +90,7 @@ class DC1Card extends HTMLElement {
         const card = document.createElement('ha-card');
         const style = document.createElement('style');
         style.textContent = this._cssData();
-        card.className = 'dc1';
+        card.className = 'zdc1';
         card.appendChild(style);
 
         const container = document.createElement('div');
@@ -303,9 +303,9 @@ class DC1Card extends HTMLElement {
         return e
       }
 }
-customElements.define("dc1-card", DC1Card);
+customElements.define("zdc1-card", zDC1Card);
 
-export class DC1CardEditor extends LitElement {
+export class zDC1CardEditor extends LitElement {
     setConfig(config) {
         this.config = deepClone(config);
     }
@@ -601,11 +601,11 @@ export class DC1CardEditor extends LitElement {
       }
 
 }
-customElements.define("dc1-card-editor", DC1CardEditor);
+customElements.define("zdc1-card-editor", zDC1CardEditor);
 
 window.customCards = window.customCards || [];
 window.customCards.push({
-  type: "dc1-card",
+  type: "zdc1-card",
   name: "斐讯排插",
   preview: true, // Optional - defaults to false
   description: "自定义斐讯排插卡片" // Optional
