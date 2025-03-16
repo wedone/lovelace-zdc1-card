@@ -55,15 +55,6 @@ class zDC1Card extends HTMLElement {
                 case 'v':
                     spanv.innerHTML = v;
                     break;
-                case 'today':
-                    spanv.innerHTML = v;
-                    break;
-                case 'yesterday':
-                    spanv.innerHTML = v;
-                    break;
-                case 'total':
-                    spanv.innerHTML = Math.ceil(v);
-                    break;
             }
             
         }
@@ -137,15 +128,6 @@ class zDC1Card extends HTMLElement {
                     break;
                 case 'v':
                     str = '<span class="sn">电压:</span><span class="sv"></span><span class="su">V</span>';
-                    break;
-                case 'today':
-                    str = '<span class="sn">今日:</span><span class="sv"></span><span class="su">度</span>';
-                    break;
-                case 'yesterday':
-                    str = '<span class="sn">昨天:</span><span class="sv"></span><span class="su">度</span>';
-                    break;
-                case 'total':
-                    str = '<span class="sn">总量:</span><span class="sv"></span><span class="su">度</span>';
                     break;
             }
             sensorBox.innerHTML = str;
@@ -317,15 +299,12 @@ export class zDC1CardEditor extends LitElement {
         };
     }
     render() {
-        var sensorRE = new RegExp("sensor\.dc|sensor\.tc")
-        var switchRE = new RegExp("switch\.dc|switch\.tc")
+        var sensorRE = new RegExp("sensor\.dc|sensor\.tc|sensor\.zdc1")
+        var switchRE = new RegExp("switch\.dc|switch\.tc|switch\.zdc1")
         var sensors = [
             {c:"a",n:"电流"},
             {c:"w",n:"功率"},
-            {c:"v",n:"电压"},
-            {c:"today",n:"今日电量"},
-            {c:"yesterday",n:"昨日电量"},
-            {c:"total",n:"总电量"}
+            {c:"v",n:"电压"}
         ]
         if (!this.hass) {
             return html`dddddd
