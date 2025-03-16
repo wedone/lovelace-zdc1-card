@@ -63,7 +63,7 @@ class zDC1Card extends HTMLElement {
         this._config = JSON.parse(JSON.stringify(config));
 
         if(Object.getOwnPropertyNames(this._config.sensors).length<6){
-            this.cardH = '113px';
+            this.cardH = '90px';
         }else{
             this.cardH = '136px';
         }
@@ -259,7 +259,7 @@ class zDC1Card extends HTMLElement {
 }
 #name{
     transform: rotate(90deg);
-    width: 136px;
+    width: 90px;
     height: 20px;
     text-align: center;
     transform-origin: bottom left;
